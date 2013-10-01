@@ -12,6 +12,12 @@ To install the plugin, you need to login to the cPanel server as root and issue 
 
     wget -q -O - http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-install.sh | sh
 
+Your WHM panel will reflect the new plugin under the "Plugins" menu. You don't need to do any additional steps, and now MarketGoo services will be available to all your users!
+
+The plugin will warn you if a new version of the plugin is available. To update the plugin, just use the same installation commmand line:
+
+    wget -q -O - http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-install.sh | sh
+
 
 Uninstalling the plugin
 -----------------------
