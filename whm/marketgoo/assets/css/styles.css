@@ -1,0 +1,147 @@
+body {
+    font-size: 12px;
+}
+
+p, dd {
+    color: #666;
+}
+
+p.lead {
+    color: #888;
+}
+
+h1, .h1 {
+    color: #444;
+    font-weight: bold;
+}
+
+h2, .h2 {
+    font-size: 25px;
+    color: #666;
+}
+
+h2, .h2 {
+    font-size: 22px;
+    color: #666;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+dt {
+    font-size: 14px;
+}
+
+dd {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #ccc;
+}
+
+dd:last-child {
+    border-bottom: none;
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    padding: 2px 4px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #444;
+    white-space: nowrap;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+.navbar {
+    border: none;
+    padding: 30px 0px;
+}
+
+.navbar-brand {
+    text-indent: -9999px;
+    padding: 0px;
+    width: 262px;
+    height: 50px;
+    background: transparent url('../logo.png') no-repeat;
+}
+
+.navbar-inverse {
+    background: #3fb6fd;
+}
+
+.navbar-inverse .navbar-text {
+    font-size: 14px;
+    color: #eee;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    text-decoration: underline;
+}
+
+
+.alert {
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+}
+
+.alert-danger a {
+    color: #b94a48;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.alert-danger a:hover {
+    color: red;
+}
+
+.panel {
+    border-radius: 10px;
+}
+
+.panel-primary {
+    border-color: #3fb6fd;
+    margin: 40px 0px;
+}
+
+.panel-primary > .panel-heading {
+    background: #3fb6fd;
+    border-color: #3fb6fd;
+
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.col-benefits {
+    background: #eee;
+    padding: 20px 30px;
+
+    border-radius: 20px;
+}
+
+.col-benefits h3 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.col-benefits dl {
+    margin: 0px;
+}
+
+.main-content {
+    margin-bottom: 50px;
+}
+
+.btn-primary {
+    background: #3fb6fd;
+    border-color: #3fb6fd;
+}
