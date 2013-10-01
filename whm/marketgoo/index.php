@@ -2,10 +2,6 @@
 
 	require("lib.php");
 
-	// Report all PHP errors until Plug-in version 1.0 for easy debuging
-	ini_set(‘display_errors’, 1);
-	error_reporting(E_ALL);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +34,7 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li><a href="mailto:support@marketgoo.com">Get Support</a></li>
-            <li><a href="http://www.marketgoo.com/partners/cpanel/" target="_blank">Info bout cPanel Partnership</a></li>
+            <li><a href="http://www.marketgoo.com/partners/cpanel/" target="_blank">Info about cPanel Partnership</a></li>
         </ul>
 
     </div>
