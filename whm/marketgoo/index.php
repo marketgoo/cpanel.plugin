@@ -109,9 +109,9 @@
                     exponentially.</dd>
 
                 <dt>Differentiate your services</dt>
-                <dd>MarketGoo is the most complete online marketing app offered
-                    to SMBs. Outmaneuver your competition by offering the best
-                    solution available.</dd>
+                <dd>MarketGoo is the most complete website marketing app
+					offered to SMBs. Outmaneuver your competition by offering
+					the best solution available.</dd>
 
                 <dt>Seamless integration</dt>
                 <dd>MarketGoo integrates with your host perfectly as a cPanel
