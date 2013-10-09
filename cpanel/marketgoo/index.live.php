@@ -193,6 +193,7 @@ $("#mktgooSubmit").click(function() {
 			restoreButton();
 			if (status.error) {
 				$(".config-group .errors").text(status.error).show();
+				return;
 			} else if (status.uuid) {
 				var url = window.location.href;
 				if (url.indexOf('?') > -1) {
