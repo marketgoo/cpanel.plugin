@@ -52,7 +52,7 @@
 <?php	if (is_new_version_available()) { ?>
         <div class="alert alert-danger">
             <strong>There is a new version of the plug-in available.</strong><br />
-            Please, <a href="http://www.marketgoo.com/cpanel/" target="_blank">click here</a> for installation instructions
+            Please, <a href="http://www.marketgoo.com/partners/cpanel/" target="_blank">click here</a> for installation instructions
         </div>
 <?php	} ?>
 
@@ -70,8 +70,8 @@
         <dl>
             <dt>What is the Partner ID?</dt>
             <dd>As part of the MarketGoo plug-in for cPanel, you can partner
-                with us to earn a commission on each MarketGoo your customers
-                subscribes. You can earn a <strong>20% revenue share</strong>
+                with us to earn a commission on each MarketGoo subscription.
+                You can earn a <strong>20% revenue share</strong>
                 from your referred customers. This is one of the
                 <strong>largest commissions in the industry</strong>!
                 <br />

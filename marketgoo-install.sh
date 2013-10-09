@@ -64,6 +64,7 @@ install_whm_addon()
     else
         echo "${GREEN} +++ Using previous Partner ID:" `cat $HOME/.marketgoo_partner_id` "${RESET}"
     fi
+    cp -f $HOME/.marketgoo_partner_id $MKTGOODIR/.marketgoo_partner_id
 }
 
 install_cpanel_plugin()
@@ -96,6 +97,14 @@ uninstall_cpanel_plugin()
 
 
 trap cleanup HUP PIPE INT QUIT TERM EXIT
+
+if [ $EUID != 0 ]; then
+    echo
+    echo "${RED}***** You must be root to install *****${RESET}"
+    echo "${WHITE}Please login as root or use sudo and try again...${RESET}"
+    echo
+    exit
+fi
 
 if [ ! -f /usr/local/cpanel/version ]; then
     echo

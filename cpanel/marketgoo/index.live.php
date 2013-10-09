@@ -2,7 +2,7 @@
 
 	require("marketgoo.live.php");
 
-    $mktgoo = new Mktgoo();
+	$mktgoo = new Mktgoo();
 	if ($mktgoo->is_registered()) $mktgoo->open_site();
 
 	echo $mktgoo->html_header();
@@ -104,41 +104,44 @@
 	<strong>online marketing strategy</strong>. Start increasing your revenue
 	by receiving more <strong>qualified leads</strong> with MarketGoo!</p>
 
-    <h2>Please fill in the following details for registration:</h2>
+	<h2>Please fill in the following details for registration:</h2>
 
 	<form id="mktgooForm" action="https://panel.marketgoo.com/ajax/cpanel_signup" class="form-horizontal">
-	<input type="hidden" name="jsb982bn3s" value="en" />
+	<input type="hidden" name="8fd4e056c2" value="cpanel" />
+	<input type="hidden" name="jsb982bn3s" value="<?php echo $mktgoo->user_language() ?>" />
+	<input type="hidden" name="mxjh72nsj2" value="<?php echo $mktgoo->user_country() ?>" />
+	<input type="hidden" name="25fa5ad84b" value="<?php echo $mktgoo->user_ip() ?>" />
+	<input type="hidden" name="f12aa96c3b" value="<?php echo $mktgoo->reseller_id() ?>" />
+	<input type="hidden" name="36bb2f20a5" value="<?php echo $mktgoo->partner_id() ?>" />
+
 	<div class="row">
 
-        <div class="config-group">
+		<div class="config-group">
+			<div class="errors"></div>
 
-			<div class="errors">
-				Please, use a password for signup
-			</div>
-
-	        <div class="control-group">
+			<div class="control-group">
 				<label>Your web address</label>
 				<div class="controls"><input type="text" name="djn3Sdc72D" value="<?php echo $mktgoo->user_domain() ?>" /></div>
 			</div>
 
-	        <div class="control-group">
+			<div class="control-group">
 				<label>Contact name</label>
 				<div class="controls"><input type="text" name="alW8fDs972" /></div>
 			</div>
 
-	        <div class="control-group">
+			<div class="control-group">
 				<label>Email address</label>
 				<div class="controls"><input type="text" name="98Fsd82ffd" value="<?php echo $mktgoo->user_email() ?>" /></div>
 			</div>
 
-	        <div class="control-group">
+			<div class="control-group">
 				<label>Choose a Password <small>(6 characters or numbers)</small></label>
 				<div class="controls"><input type="password" name="43Hgd87234" /></div>
 			</div>
 
-	        <div class="form-actions">
-	            <button id="mktgooSubmit" type="button" class="btn">Signup »</button>
-	        </div>
+			<div class="form-actions">
+				<button id="mktgooSubmit" type="button" class="btn">Signup »</button>
+			</div>
 
 			<p class="disclaimer">
 				By clicking on Signup you agree with our 
@@ -147,7 +150,7 @@
 				<a href="http://www.marketgoo.com/legal/privacy" target="_blank">privacy policy</a>.</p>
 			</p>
 
-    	</div>
+		</div>
 	</div>
 	</form>
 
@@ -192,7 +195,7 @@ $("#mktgooSubmit").click(function() {
 				$(".config-group .errors").text(status.error).show();
 			} else if (status.uuid) {
 				var url = window.location.href;
-				if (url.indexOf('?') > -1){
+				if (url.indexOf('?') > -1) {
 					url += '&signupok=' + status.uuid;
 				}else{
 					url += '?signupok=' + status.uuid;
