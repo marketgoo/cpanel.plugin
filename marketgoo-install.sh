@@ -45,7 +45,7 @@ download_latest()
 {
     echo
     echo "${WHITE}Downloading latest plug-in version${RESET}"
-    wget -q -O - ${REMOTE_REPOSITORY}/archive/master.tar.gz | tar xz -C $TEMPDIR
+    wget --no-check-certificate -q -O - ${REMOTE_REPOSITORY}/archive/master.tar.gz | tar xz -C $TEMPDIR
 }
 
 install_whm_addon()
