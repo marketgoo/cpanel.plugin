@@ -17,7 +17,7 @@
 #   $ /bin/sh ./marketgoo-install.sh
 #
 #   Execute installer directly from GitHub
-#   $ curl -Lks http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-uninstall.sh | sh
+#   $ curl -Lks http://git.io/marketgoo.cpanel.uninstall | sh
 #
 ##############################################################################
 

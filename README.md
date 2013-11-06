@@ -10,13 +10,13 @@ Installing the plugin
 
 To install the plugin, you need to login to the cPanel server as root and issue the following command:
 
-    curl -Lks http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-install.sh | sh
+    curl -Lks http://git.io/marketgoo.cpanel.install | sh
 
 Your WHM panel will reflect the new plugin under the "Plugins" menu. You don't need to do any additional steps, and now MarketGoo services will be available to all your users!
 
 The plugin will warn you if a new version of the plugin is available. To update the plugin, just use the same installation commmand line:
 
-    curl -Lks http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-install.sh | sh
+    curl -Lks http://git.io/marketgoo.cpanel.install | sh
 
 
 Uninstalling the plugin
@@ -24,7 +24,7 @@ Uninstalling the plugin
 
 To uninstall, login to the cPanel server as root and use the following command:
 
-    curl -Lks http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-uninstall.sh | sh
+    curl -Lks http://git.io/marketgoo.cpanel.uninstall | sh
 
 
 Getting support
