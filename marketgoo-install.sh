@@ -11,11 +11,11 @@
 #
 #
 #   Download and execute this file in your shell:
-#   $ wget http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-install.sh
+#   $ curl -LO http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-install.sh
 #   $ /bin/sh ./marketgoo-install.sh
 #
 #   Execute installer directly from GitHub
-#   $ wget -q -O - http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-install.sh | sh
+#   $ curl -Lks http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-install.sh | sh
 #
 ##############################################################################
 
@@ -45,7 +45,7 @@ download_latest()
 {
     echo
     echo "${WHITE}Downloading latest plug-in version${RESET}"
-    wget --no-check-certificate -q -O - ${REMOTE_REPOSITORY}/archive/master.tar.gz | tar xz -C $TEMPDIR
+    curl -Lks ${REMOTE_REPOSITORY}/archive/master.tar.gz | tar xz -C $TEMPDIR
 }
 
 install_whm_addon()

@@ -13,11 +13,11 @@
 #   UNISTALLER
 #
 #   Download and execute this file in your shell:
-#   $ wget http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-uninstall.sh
+#   $ curl -LO http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-uninstall.sh
 #   $ /bin/sh ./marketgoo-install.sh
 #
 #   Execute installer directly from GitHub
-#   $ wget -q -O - http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-uninstall.sh | sh
+#   $ curl -Lks http://raw.github.com/marketgoo/cpanel.plugin/master/marketgoo-uninstall.sh | sh
 #
 ##############################################################################
 
