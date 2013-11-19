@@ -65,6 +65,17 @@
             </div>
         </div>
 
+        <div class="config-instructions">
+        <h2>Configuration instructions</h2>
+        <ol>
+            <li>Access or Sign up in your partner portal at <a href="https://partners.marketgoo.com/" target="_blank">partners.marketgoo.com</a></li>
+            <li>Add this server PartnerID shown above into the <strong>Add Server</strong> section</li>
+            <li>You are set up, start generating 20% commissions from your
+                users and claim payments through <strong>Payments</strong> section in the
+                partner portal</li>
+        </ol>
+        </div>
+
         <div class="quick-faq">
         <h2>Partnership Frequently Asked Questions</h2>
         <dl>
@@ -84,12 +95,10 @@
                 are not obligated to join the partneship program, but when you
                 do you've already a Partner ID ready.</dd>
 
-            <dt>How can I subscribe to your partnership program?</dt>
-            <dd>Our partnership program is not yet publicy available. We've
-                just releasing our plug-in at the cPanel Conference'13 in New
-                Orleans. You'll be able to register after the
-                event. Please <a href="mailto:support@marketgoo.com">contact
-                support</a> if you want to be notified about availability.</dd>
+            <dt>I have many servers! Do I have to use multiple PartnerIDs?</dt>
+            <dd>No, you can reuse one of your existing PartnerID so you can
+				group different server clusters. For further instructions
+				please visit our <a href="http://support.marketgoo.com/customer/portal/articles/1334730-how-to-install-marketgoo-cpanel-plugin" target="_blank">documentation about reusing PartnerID</a>.</dd>
 
         </dl>
         </div>
@@ -100,7 +109,7 @@
             <h3>Benefits of MarketGoo Partnership</h3>
             <dl>
                 <dt>High profit margins</dt>
-                <dd>Earn from 20% revenue share from your referred customers.
+                <dd>Earn 20% revenue share from your referred customers.
                     One of the largest commissions in the industry!</dd>
 
                 <dt>Increase retention</dt>

@@ -2,7 +2,7 @@ body {
     font-size: 12px;
 }
 
-p, dd {
+p, dd, li {
     color: #666;
 }
 
