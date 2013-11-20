@@ -53,7 +53,7 @@ install_whm_addon()
     echo "${WHITE}Installing WHM AddOn${RESET}"
     if [ -x /usr/local/cpanel/bin/register_appconfig ]; then
         # For WHM 11.38+
-        mkdir -p $WHMROOT/docroot/cgi/addons/marketgoo/ && cp -r $SRCDIR/whm/marketgoo/ $WHMROOT/docroot/cgi/addons/marketgoo/ >/dev/null 2>&1
+        mkdir -p $WHMROOT/docroot/cgi/addons/marketgoo/ && cp -r $SRCDIR/whm/marketgoo/ $WHMROOT/docroot/cgi/addons/ >/dev/null 2>&1
         mkdir -p $WHMROOT/docroot/addon_plugins/ && cp $SRCDIR/whm/marketgoo.gif $WHMROOT/docroot/addon_plugins/marketgoo.gif >/dev/null 2>&1
         /usr/local/cpanel/bin/register_appconfig $SRCDIR/whm/appconfig/marketgoo.conf >/dev/null 2>&1
     else
