@@ -81,8 +81,15 @@ if [ ! -f /usr/local/cpanel/Cpanel/LiveAPI.pm ]; then
     exit
 fi
 
-echo
-echo "${CYAN}Uninstalling MarketGoo plug-in for cPanel/WHM${RESET}"
-uninstall_cpanel_plugin && uninstall_whm_addon
-echo "${GREEN}*** DONE ***${RESET}"
-echo
+if [ ! -f $MKTGOODIR/uninstall_plugins.sh ]; then
+    echo
+    echo "${WHITE}MarketGoo plug-in for cPanel/WHM already unistalled!${RESET}"
+    echo "${GREEN}*** DONE ***${RESET}"
+    echo
+else
+    echo
+    echo "${CYAN}Uninstalling MarketGoo plug-in for cPanel/WHM${RESET}"
+    uninstall_cpanel_plugin && uninstall_whm_addon
+    echo "${GREEN}*** DONE ***${RESET}"
+    echo
+fi
