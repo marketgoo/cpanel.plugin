@@ -33,11 +33,9 @@ Getting support
 If you have trouble with the plugin, please create an issue here in github or contact us at support@marketgoo.com
 
 
-Changes log
------------
+Changelog
+---------
 
+    1.0.4    Updated installation script to use AppConfig for WHM 11.38+
     1.0.3    Added instructions about how to connect to our Partner Portal.
-
     1.0.2    Using 'curl' now instead of 'wget' to retrieve plugin files.
-
-

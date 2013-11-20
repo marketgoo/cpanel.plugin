@@ -1,6 +1,6 @@
 <?php
 
-	require("lib.php");
+    require("lib.php");
 
 ?>
 <!DOCTYPE html>
@@ -33,8 +33,8 @@
         <p class="navbar-text">for cPanel</p>
 
         <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://partners.marketgoo.com/login/" target="_blank">Log in</a></li>
             <li><a href="mailto:support@marketgoo.com">Get Support</a></li>
-            <li><a href="http://www.marketgoo.com/partners/cpanel/" target="_blank">Info about cPanel Partnership</a></li>
         </ul>
 
     </div>
@@ -97,8 +97,8 @@
 
             <dt>I have many servers! Do I have to use multiple PartnerIDs?</dt>
             <dd>No, you can reuse one of your existing PartnerID so you can
-				group different server clusters. For further instructions
-				please visit our <a href="http://support.marketgoo.com/customer/portal/articles/1334730-how-to-install-marketgoo-cpanel-plugin" target="_blank">documentation about reusing PartnerID</a>.</dd>
+                group different server clusters. For further instructions
+                please visit our <a href="http://support.marketgoo.com/customer/portal/articles/1334730-how-to-install-marketgoo-cpanel-plugin" target="_blank">documentation about reusing PartnerID</a>.</dd>
 
         </dl>
         </div>
@@ -119,8 +119,8 @@
 
                 <dt>Differentiate your services</dt>
                 <dd>MarketGoo is the most complete website marketing app
-					offered to SMBs. Outmaneuver your competition by offering
-					the best solution available.</dd>
+                    offered to SMBs. Outmaneuver your competition by offering
+                    the best solution available.</dd>
 
                 <dt>Seamless integration</dt>
                 <dd>MarketGoo integrates with your host perfectly as a cPanel

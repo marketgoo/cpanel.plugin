@@ -47,6 +47,13 @@ uninstall_whm_addon()
 {
     echo "${WHITE}Uninstalling WHM AddOn${RESET}"
 
+    # First, unregister addon thru AppConfig
+    if [ -x /usr/local/cpanel/bin/unregister_appconfig ]; then
+        /usr/local/cpanel/bin/unregister_appconfig marketgoo >/dev/null 2>&1
+    fi
+
+    # Then delete all, WHM all versions
+    rm -rf $WHMROOT/docroot/cgi/addons/marketgoo/ >/dev/null 2>&1
     rm -rf $WHMROOT/docroot/marketgoo/ >/dev/null 2>&1
     rm -rf $WHMROOT/docroot/cgi/addon_marketgoo.cgi >/dev/null 2>&1
     rm -rf $WHMROOT/docroot/themes/x/icons/marketgoo.gif >/dev/null 2>&1

@@ -51,18 +51,25 @@ download_latest()
 install_whm_addon()
 {
     echo "${WHITE}Installing WHM AddOn${RESET}"
+    if [ -x /usr/local/cpanel/bin/register_appconfig ]; then
+        # For WHM 11.38+
+        mkdir -p $WHMROOT/docroot/cgi/addons/marketgoo/ && cp -r $SRCDIR/whm/marketgoo/ $WHMROOT/docroot/cgi/addons/marketgoo/ >/dev/null 2>&1
+        mkdir -p $WHMROOT/docroot/addon_plugins/ && cp $SRCDIR/whm/marketgoo.gif $WHMROOT/docroot/addon_plugins/marketgoo.gif >/dev/null 2>&1
+        /usr/local/cpanel/bin/register_appconfig $SRCDIR/whm/appconfig/marketgoo.conf >/dev/null 2>&1
+    else
+        # For WHM 11.32
+        cp -r $SRCDIR/whm/marketgoo/ $WHMROOT/docroot/ >/dev/null 2>&1
+        cp -f $SRCDIR/whm/addon_marketgoo.cgi $WHMROOT/docroot/cgi/ >/dev/null 2>&1
+        cp -f $SRCDIR/whm/marketgoo.gif $WHMROOT/docroot/themes/x/icons/ >/dev/null 2>&1
+    fi
 
-    cp -r $SRCDIR/whm/marketgoo/ $WHMROOT/docroot/ >/dev/null 2>&1
-    cp -f $SRCDIR/whm/addon_marketgoo.cgi $WHMROOT/docroot/cgi/ >/dev/null 2>&1
-    cp -f $SRCDIR/whm/marketgoo.gif $WHMROOT/docroot/themes/x/icons/ >/dev/null 2>&1
     mkdir -p $MKTGOODIR
     cp -f $SRCDIR/VERSION $MKTGOODIR/VERSION
-
     if [ ! -f $HOME/.marketgoo_partner_id ]; then
         php -r "require('${SRCDIR}/whm/marketgoo/lib.php'); echo generate_partnerid();" > $HOME/.marketgoo_partner_id
-        echo "${GREEN} +++ Generating new Partner ID:" `cat $HOME/.marketgoo_partner_id` "${RESET}"
+        echo "${GREEN}+++ Generating new Partner ID:" `cat $HOME/.marketgoo_partner_id` "${RESET}"
     else
-        echo "${GREEN} +++ Using previous Partner ID:" `cat $HOME/.marketgoo_partner_id` "${RESET}"
+        echo "${GREEN}+++ Using previous Partner ID:" `cat $HOME/.marketgoo_partner_id` "${RESET}"
     fi
     cp -f $HOME/.marketgoo_partner_id $MKTGOODIR/.marketgoo_partner_id
 }
@@ -82,6 +89,13 @@ uninstall_whm_addon()
 {
     echo "${WHITE}Uninstalling WHM AddOn${RESET}"
 
+    # First, unregister addon thru AppConfig
+    if [ -x /usr/local/cpanel/bin/unregister_appconfig ]; then
+        /usr/local/cpanel/bin/unregister_appconfig marketgoo >/dev/null 2>&1
+    fi
+
+    # Then delete all, WHM all versions
+    rm -rf $WHMROOT/docroot/cgi/addons/marketgoo/ >/dev/null 2>&1
     rm -rf $WHMROOT/docroot/marketgoo/ >/dev/null 2>&1
     rm -rf $WHMROOT/docroot/cgi/addon_marketgoo.cgi >/dev/null 2>&1
     rm -rf $WHMROOT/docroot/themes/x/icons/marketgoo.gif >/dev/null 2>&1
@@ -128,7 +142,7 @@ echo
 echo "${CYAN}Installing MarketGoo plug-in for cPanel/WHM${RESET}"
 if [ -d $MKTGOODIR ]; then
     PREVIOUS=`cat $MKTGOODIR/VERSION`
-    echo "${GREEN} +++ Detected previous MarketGoo plug-in v${PREVIOUS}. Upgrading.${RESET}"
+    echo "${GREEN}+++ Detected previous MarketGoo plug-in v${PREVIOUS}. Upgrading.${RESET}"
     uninstall_cpanel_plugin && uninstall_whm_addon
 fi
 download_latest && install_whm_addon && install_cpanel_plugin
