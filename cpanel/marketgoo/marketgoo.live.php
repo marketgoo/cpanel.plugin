@@ -170,7 +170,6 @@ class Mktgoo {
 		return $this->get_partner_id();
 	}
 
-
 	function target_for_item($item)
 	{
 		switch ($item) {

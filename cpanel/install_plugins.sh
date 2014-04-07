@@ -23,22 +23,17 @@ display_progress()
 
 advance_progress()
 {
-    echo -n "=========="
+    echo -n "=============================="
 }
 
 echo "${WHITE}Installing cPanel Plugins${RESET}   (This may take a couple minutes)"
-display_progress
 
 # Create the Group
-$INSTALL_CMD $CWD/plugins/marketgoo.cpanelplugin >/dev/null 2>&1
+display_progress && $INSTALL_CMD $CWD/plugins/marketgoo.cpanelplugin >/dev/null 2>&1
 
 # Create plugins
-advance_progress && $INSTALL_CMD $CWD/plugins/free_seo_starter_pack.cpanelplugin >/dev/null 2>&1
-advance_progress && $INSTALL_CMD $CWD/plugins/optimize_website.cpanelplugin >/dev/null 2>&1
-advance_progress && $INSTALL_CMD $CWD/plugins/increase_visibility.cpanelplugin >/dev/null 2>&1
-advance_progress && $INSTALL_CMD $CWD/plugins/improve_social_media.cpanelplugin >/dev/null 2>&1
-advance_progress && $INSTALL_CMD $CWD/plugins/analyze_competitors.cpanelplugin >/dev/null 2>&1
-advance_progress && $INSTALL_CMD $CWD/plugins/monitor_results.cpanelplugin >/dev/null 2>&1
-/usr/local/cpanel/bin/rebuild_sprites >/dev/null 2>&1
+advance_progress && $INSTALL_CMD $CWD/plugins/website_marketing_tools.cpanelplugin >/dev/null 2>&1
+
+advance_progress && /usr/local/cpanel/bin/rebuild_sprites >/dev/null 2>&1
 
 echo
