@@ -95,7 +95,7 @@ class Mktgoo {
 
 	public function open_site()
 	{
-		header("Location: https://panel.marketgoo.com/".$this->target."?action=login&uuid=".$this->uuid);
+		header("Location: https://app.marketgoo.com/".$this->target."?action=login&uuid=".$this->uuid);
 		die();
 	}
 

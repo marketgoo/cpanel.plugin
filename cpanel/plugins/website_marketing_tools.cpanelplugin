@@ -1,14 +1,14 @@
 #cpanel plugin file 1.0 (for use with /usr/local/cpanel/bin/register_cpanelplugin)
 version: 1.0
 name:website_marketing_tools
-description:MarketGoo Website Marketing Tools
+description:Website Marketing Tools
 featuremanager:1
 url:marketgoo/index.live.php?item=evolution
 acontent:
 onclick:
 if:
 itemorder:1
-itemdesc:MarketGoo Website Marketing Tools
+itemdesc:Website Marketing Tools
 group:MarketGoo
 image:iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAEp0lEQVRIx7WWW2xUVRSGv73PmU4v
 M4Vy6diW6bS1NOOt4CWaKNWEhFApD4bwYuSBID6BJGok8Y1EEo0oMSW8GDEmNoTgM60YY2JrIICX

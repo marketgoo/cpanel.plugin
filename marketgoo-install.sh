@@ -30,7 +30,8 @@ REMOTE_REPOSITORY=http://github.com/marketgoo/cpanel.plugin
 SRCDIR=${TEMPDIR}/cpanel.plugin-master
 CPVERSION=$(cat 2>/dev/null /usr/local/cpanel/version)
 MKTGOODIR=/var/cpanel/marketgoo
-THEMEDIR=/usr/local/cpanel/base/frontend/default
+THEMEDIR=/usr/local/cpanel/base/frontend/
+THEMES=`find $THEMEDIR -maxdepth 1 -type d -exec basename {} \; | tail -n +2`
 
 cleanup()
 {
@@ -80,7 +81,7 @@ install_cpanel_plugin()
     cp -r $SRCDIR/cpanel/plugins $MKTGOODIR >/dev/null 2>&1
     cp -f $SRCDIR/cpanel/install_plugins.sh $MKTGOODIR >/dev/null 2>&1
     cp -f $SRCDIR/cpanel/uninstall_plugins.sh $MKTGOODIR >/dev/null 2>&1
-    cp -r $SRCDIR/cpanel/marketgoo/ $THEMEDIR/ >/dev/null 2>&1
+    for i in $THEMES; do cp -r $SRCDIR/cpanel/marketgoo $THEMEDIR/$i >/dev/null 2>&1; done
 
     $MKTGOODIR/install_plugins.sh
 }
@@ -105,7 +106,7 @@ uninstall_whm_addon()
 uninstall_cpanel_plugin()
 {
     $MKTGOODIR/uninstall_plugins.sh
-    rm -rf $THEMEDIR/marketgoo >/dev/null 2>&1
+    for i in $THEMES; do rm -r $THEMEDIR/$i/ >/dev/null 2>&1; done
     rm -rf $MKTGOODIR
 }
 
