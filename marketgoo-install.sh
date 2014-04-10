@@ -81,7 +81,7 @@ install_cpanel_plugin()
     cp -r $SRCDIR/cpanel/plugins $MKTGOODIR >/dev/null 2>&1
     cp -f $SRCDIR/cpanel/install_plugins.sh $MKTGOODIR >/dev/null 2>&1
     cp -f $SRCDIR/cpanel/uninstall_plugins.sh $MKTGOODIR >/dev/null 2>&1
-    for i in $THEMES; do cp -r $SRCDIR/cpanel/marketgoo/ $THEMEDIR/$i/ >/dev/null 2>&1; done
+    for i in $THEMES; do cp -r $SRCDIR/cpanel/marketgoo $THEMEDIR/$i/ >/dev/null 2>&1; done
 
     $MKTGOODIR/install_plugins.sh
 }
@@ -106,7 +106,7 @@ uninstall_whm_addon()
 uninstall_cpanel_plugin()
 {
     $MKTGOODIR/uninstall_plugins.sh
-    for i in $THEMES; do rm -r $THEMEDIR/$i/ >/dev/null 2>&1; done
+    for i in $THEMES; do rm -rf $THEMEDIR/$i/marketgoo/ >/dev/null 2>&1; done
     rm -rf $MKTGOODIR
 }
 
