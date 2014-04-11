@@ -13,7 +13,9 @@ class Mktgoo {
 
 	var $username	= "";
 	var $props		= array();
-	var $locale		= "en-us";
+	var $locale		= "en";
+
+	var $translations;
 
 	function __construct()
 	{
@@ -32,6 +34,8 @@ class Mktgoo {
 		$this->username = $this->get_username();
 		$this->props  = $this->get_user_props();
 		$this->locale = $this->get_locale();
+
+		$this->translations = json_decode( file_get_contents("translations.json"), true );
 	}
 
 	function __destruct()
@@ -65,6 +69,20 @@ class Mktgoo {
 		return $props;
 	}
 
+
+	public function translate($seed)
+	{
+		if (!is_array($this->translations)) return $seed;
+
+		if (array_key_exists($seed, $this->translations[$this->locale])) {
+			return $this->translations[$this->locale][$seed];
+		} elseif (array_key_exists($seed, $this->translations[$this->locale])) {
+			return $this->translations["en"][$seed];
+		} else {
+			return $seed;
+		}
+	}
+
 	private function get_partner_id($user = "root")
 	{
 		$id_file = (($user == "root") ? "/var/cpanel/marketgoo" : "/home/".$user)."/".self::PARTNER_ID_FILENAME;
@@ -73,19 +91,9 @@ class Mktgoo {
 
 	private function get_locale()
 	{
-		$lang_str = isset($_SERVER["HTTP_ACCEPT_LANGUAGE"])
-			? $_SERVER["HTTP_ACCEPT_LANGUAGE"]
-			: $this->props["LOCALE"];
-
-		preg_match_all('/([a-z]{1,8}(-[a-z]{1,8})?)\s*(;\s*q\s*=\s*(1|0\.[0-9]+))?/i', $lang_str, $toks);
-		if (!count($toks[1])) return "en-us";
-
-		$langs = array_map(function($q){
-			return empty($q) ? 1.0 : floatval($q);
-		}, array_combine($toks[1], $toks[4]));
-
-		arsort($langs);
-		return reset(array_keys($langs));
+		$cpanel_lang = $this->cpanel->fetch('$lang');
+		$locale = $cpanel_lang["cpanelresult"]["data"]["result"];
+		return !is_null($locale) ? $locale : "en";
 	}
 
 	public function is_registered()
@@ -184,5 +192,5 @@ class Mktgoo {
 	}
 
 }
-	
+
 ?>
