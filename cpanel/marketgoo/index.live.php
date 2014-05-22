@@ -355,7 +355,7 @@ form{
 		<h3 class="preview-title"><?php echo $mktgoo->translate("MarketGoo is EASY to use");?></h3>
 		<div class="diagrams">
 
-		<img src="screenshot.jpg" width="600" height="429">
+		<img src="<?php echo $mktgoo->translate("screenshot_en.jpg");?>" width="600" height="429">
 		<ul class="pins">
 			<li class="pin-evolucion">
 				<h3><?php echo $mktgoo->translate("Track your progress");?></h3>

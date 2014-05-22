@@ -27,7 +27,8 @@
     "MarketGoo home": "MarketGoo home",
     "Learn more about MarketGoo": "Learn more about MarketGoo",
     "Sending data, please wait...": "Sending data, please wait...",
-    "There was an error with your request, please try again!": "There was an error with your request, please try again!"
+    "There was an error with your request, please try again!": "There was an error with your request, please try again!",
+    "screenshot_en.jpg": "screenshot_en.jpg"
   },
   "es": {
     "Get started today with our 6 SEO tools (free for life!) and we'll unlock the full potential of MarketGoo with a free 10 day trial!" : "Empieza ya con tus 6 herramientas SEO y aprovecha toda la potencia de MarketGoo con 10 días de prueba gratuita.",
@@ -57,6 +58,38 @@
     "MarketGoo home": "MarketGoo inicio",
     "Learn more about MarketGoo": "Aprende más sobre MarketGoo",
     "Sending data, please wait...": "Enviando datos, espere por favor...",
-    "There was an error with your request, please try again!": "Se ha producido un error, por favor inténtelo de nuevo."
+    "There was an error with your request, please try again!": "Se ha producido un error, por favor inténtelo de nuevo.",
+    "screenshot_en.jpg": "screenshot_es.jpg"
+  },
+  "nl": {
+    "Get started today with our 6 SEO tools (free for life!) and we'll unlock the full potential of MarketGoo with a free 10 day trial!" : "Ga vandaag aan de slag met 6 SEO tools (helemaal gratis!) en bekijk de uitgebreide mogelijkheden die MarketGoo je kan aanbieden met een gratis 10 dagen test-account!",
+    "With our tools you will be able to <strong>submit your site</strong> to Google, <strong>improve your SEO</strong>, and enhance your overall <strong>online marketing strategy</strong>. Start increasing your revenue by receiving more <strong>qualified leads</strong> with MarketGoo!": "Onze tools stellen je in staat om je website goed <strong>aan te melden</strong> bij Google, je <strong>SEO te verbeteren</strong> en geven je een <strong>online marketing strategie</strong> die je kan volgenden. Verhoog de opbrengst van je website met meer en <strong>betere leads</strong> dankzij MarketGoo!",
+    "Sign up and get your free SEO tools and 10 day trial upgrade! It takes less than 50 seconds:": "Meld je aan en test alle SEO tools 10 dagen helemaal gratis! Aan de slag binnen een minuut:",
+    "Your web address": "Je website url",
+    "Contact name": "Contact naam",
+    "Email address": "Email adres",
+    "Choose a Password": "Kies een wachtwoord",
+    "(6 characters or numbers)": "(tenminste 6 karakters)",
+    "Start improving my website": "Start het verbeteren van mijn website",
+    "All fields are requiered": "Alle velden zijn verplicht",
+    "By clicking on Signup you agree with our": "Door te klikken op Aanmelden ga je accoord met onze",
+    "terms and conditions": "voorwaarden",
+    "privacy policy": "privacy policy",
+    "and": "en",
+    "MarketGoo is EASY to use": "MarketGoo is EENVOUDIG te gebruiken",
+    "Track your progress": "Volg de resultaten",
+    "We prioritize your actions so you can measure your progress.": "Wij houden de belangrijkste ontwikkelingen voor je bij die je kan volgen en meten.",
+    "Easy to use interface": "Makkelijke interface",
+    "Three simple work areas, built to help you.": "Drie eenvoudige menu’s, ontworpen om je te helpen.",
+    "Customized tasks": "Maatwerk opdrachten",
+    "We analyze your web site daily to show you a customized task list.": "Wij analyseren je website dagelijks en tonen je een taken-lijst.",
+    "Our customers feedback": "Ervaring van onze klanten",
+    "After using MarketGoo for some weeks, results are thriving. I've managed to beat my competitors in rankings that are of importance to me. The visit results I see on Google Analytics are growing and now I better understand how to improve my results. MarketGoo is an addictive app and easy to use. You do not need any technical knowledge but mostly it allows you to control the reach of your company’s branding, and there is none better suited for this task than yourself.": "Nadat ik MarketGoo nu een paar weken gebruik is het resultaat verbluffend. Het is me gelukt concurrenten in de ranking te verslaan die belangrijk voor mij zijn. Ik heb Google Analytics in de gaten gehouden, zie mijn bezoekers aantallen groeien en begrijp steeds beter hoe ik mijn resultaten kan verbeteren. Ik ben verslaafd geraakt aan MarketGoo en het is gemakkelijk te gebruiken. Je hebt eigenlijk geen technische kennis nodig, je hebt alles zelf in de hand en kan precies bepalen hoe je je bedrijfs-website in de markt wil zetten. Niemand kan dat beter dat jij zelf.",
+    "Let's go!": "Laten we gaan!",
+    "MarketGoo home": "MarketGoo home",
+    "Learn more about MarketGoo": "Ontdek alle opties van MarketGoo",
+    "Sending data, please wait...": "Het verzenden van gegevens, even geduld ...",
+    "There was an error with your request, please try again!": "Er is een fout opgetreden met uw verzoek, probeer het opnieuw!",
+    "screenshot_en.jpg": "screenshot_nl.jpg"
   }
 }

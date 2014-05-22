@@ -124,14 +124,14 @@ class Mktgoo {
 	{
 		$this->cpanel->api1("Branding", "include", array("stdheader.html"));
 		$html = $this->cpanel->get_result();
-		return preg_replace("/index\.html/", "../index.html", $html);
+		return preg_replace(["/index\.html/", "@images/@"], ["../index.html", "../images/"], $html);
 	}
 
 	public function html_footer()
 	{
 		$this->cpanel->api1("Branding", "include", array("stdfooter.html"));
 		$html = $this->cpanel->get_result();
-		return preg_replace("/index\.html/", "../index.html", $html);
+		return preg_replace(["/index\.html/", "@images/@"], ["../index.html", "../images/"], $html);
 	}
 
 	public function user_name()
