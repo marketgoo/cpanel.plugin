@@ -33,8 +33,8 @@ if [ -x ${INSTALL_CMD_44} ]; then
     display_progress
 
     # Create the Group an Plugin using the new 11.44+ cPanel version
-    advance_progress && ${INSTALL_CMD_44} $CWD/plugins/paperlantern --theme x3
-    advance_progress && ${INSTALL_CMD_44} $CWD/plugins/paperlantern --theme paper_lantern
+    advance_progress && ${INSTALL_CMD_44} $CWD/plugins/x3.tar.gz --theme x3
+    advance_progress && ${INSTALL_CMD_44} $CWD/plugins/paperlantern.tar.gz --theme paper_lantern
 else
     # Create the Group
     display_progress && $INSTALL_CMD $CWD/plugins/marketgoo.cpanelplugin >/dev/null 2>&1
