@@ -43,7 +43,7 @@ function get_partnerid()
 		file_put_contents($usr["dir"]."/".MKTGOO_PARTNERID_FILE, $new_partner_id);
 		return $new_partner_id;
 	} else {
-		return file_get_contents($usr["dir"]."/".MKTGOO_PARTNERID_FILE);
+		return file_get_contents($usr["dir"]."/".MKTGOO_PARTNERID_FILE, false, null, 0, 10);
 	}
 }
 
@@ -56,7 +56,7 @@ function get_host_partnerid()
 		file_put_contents($usr["dir"]."/".MKTGOO_PARTNERID_FILE, $new_partner_id);
 		return $new_partner_id;
 	} else {
-		return file_get_contents($usr["dir"]."/".MKTGOO_PARTNERID_FILE);
+		return file_get_contents($usr["dir"]."/".MKTGOO_PARTNERID_FILE, false, null, 0, 10);
 	}
 }
 

@@ -108,7 +108,7 @@ uninstall_cpanel_plugin()
     $MKTGOODIR/uninstall_plugins.sh
     for i in $THEMES; do
         rm -rf $THEMEDIR/$i/marketgoo/ >/dev/null 2>&1
-        # rm -rf $THEMEDIR/$i/dynamicui/dynamicui-marketgoo.conf
+        rm -rf $THEMEDIR/$i/dynamicui/dynamicui_marketgoo* >/dev/null 2>&1
     done
     rm -rf $MKTGOODIR
 }
