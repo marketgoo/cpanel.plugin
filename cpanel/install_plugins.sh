@@ -15,6 +15,7 @@ WHITE=$(tput setaf 7 ; tput bold)
 RESET=$(tput sgr0)
 CWD=`dirname $0`
 INSTALL_CMD=/usr/local/cpanel/bin/register_cpanelplugin
+INSTALL_CMD_44=/usr/local/cpanel/scripts/install_plugin
 
 display_progress()
 {
@@ -28,12 +29,19 @@ advance_progress()
 
 echo "${WHITE}Installing cPanel Plugins${RESET}   (This may take a couple minutes)"
 
-# Create the Group
-display_progress && $INSTALL_CMD $CWD/plugins/marketgoo.cpanelplugin >/dev/null 2>&1
+if [ -x ${INSTALL_CMD_44} ]; then
+    display_progress
 
-# Create plugins
-advance_progress && $INSTALL_CMD $CWD/plugins/website_marketing_tools.cpanelplugin >/dev/null 2>&1
+    # Create the Group an Plugin using the new 11.44+ cPanel version
+    advance_progress && ${INSTALL_CMD_44} $CWD/plugins/paperlantern --theme x3
+    advance_progress && ${INSTALL_CMD_44} $CWD/plugins/paperlantern --theme paper_lantern
+else
+    # Create the Group
+    display_progress && $INSTALL_CMD $CWD/plugins/marketgoo.cpanelplugin >/dev/null 2>&1
 
-advance_progress && /usr/local/cpanel/bin/rebuild_sprites >/dev/null 2>&1
+    # Create plugins
+    advance_progress && $INSTALL_CMD $CWD/plugins/website_marketing_tools.cpanelplugin >/dev/null 2>&1
+    advance_progress && /usr/local/cpanel/bin/rebuild_sprites >/dev/null 2>&1
+fi
 
 echo
