@@ -36,6 +36,7 @@ If you have trouble with the plugin, please create an issue here in github or co
 Changelog
 ---------
 
+    1.2.0    Fixed support for Paper Lantern theme.
     1.1.1    Added support for Dutch language
     1.1.0    Streamlined icons. Added suppport for 'paper_lantern' theme.
     1.0.4    Updated installation script to use AppConfig for WHM 11.38+
