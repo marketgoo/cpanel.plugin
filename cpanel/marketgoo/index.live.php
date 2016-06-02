@@ -19,6 +19,7 @@ form{
 
 #mktgooForm {
 	margin-top: 30px;
+	margin-bottom: 100px;
 }
 
 .marketgoo-form {
@@ -205,7 +206,7 @@ form{
 
 .screenshot{
 	text-align: center;
-	margin: 80px 0px 35px 0px;
+	margin: 20px 0px 35px 0px;
 }
 
 .screenshot img{
@@ -294,8 +295,7 @@ form{
 </style>
 
 <div class="marketgoo-form">
-	<img src="logo.png" class="logo" />
-	
+
 	<h2><?php echo $mktgoo->translate("Get started today with our 6 SEO tools (free for life!) and we'll unlock the full potential of MarketGoo with a free 10 day trial!"); ?></h2>
 	<p><?php echo $mktgoo->translate("With our tools you will be able to <strong>submit your site</strong> to Google, <strong>improve your SEO</strong>, and enhance your overall <strong>online marketing strategy</strong>. Start increasing your revenue by receiving more <strong>qualified leads</strong> with MarketGoo!");?></p>
 
@@ -351,6 +351,7 @@ form{
 	</div>
 	</form>
 
+	<img src="logo.png" class="logo" />
 	<div class="screenshot">
 		<h3 class="preview-title"><?php echo $mktgoo->translate("MarketGoo is EASY to use");?></h3>
 		<div class="diagrams">
@@ -370,7 +371,6 @@ form{
 				<p><?php echo $mktgoo->translate("We analyze your web site daily to show you a customized task list.");?></p>
 			</li>
 		</ul>
-
 	</div>
 	</div>
 
@@ -402,63 +402,74 @@ form{
 	</p>
 
 </div>
+
 <script type="text/javascript">
 
-$("#toTop").click(function(){
-	$('body').animate({ scrollTop: $("#mktgooForm").offset().top }, 'slow');
-})
+function attach_events($)
+{
+	$("#toTop").click(function(){
+		$('body').animate({ scrollTop: $("#mktgooForm").offset().top }, 'slow');
+	})
 
-$("#mktgooSubmit").click(function() {
+	$("#mktgooSubmit").click(function() {
 
-	var self = $(this);
-	var the_form = self.closest("form");
+		var self = $(this);
+		var the_form = self.closest("form");
 
-	function waitButton()
-	{
-		self.text("<?php echo $mktgoo->translate("Sending data, please wait...");?>");
-		self.attr("disabled", "disabled");
-	}
-
-	function restoreButton()
-	{
-		self.attr("disabled", "");
-		self.text("<?php echo $mktgoo->translate("Start improving my website");?> »");
-	}
-
-	function unknownError()
-	{
-		$(".config-group .errors").text("<?php echo $mktgoo->translate("There was an error with your request, please try again!");?>").show();
-	}
-
-	waitButton();
-	$.ajax({
-		type: "POST",
-		url: the_form.attr("action"),
-		data: the_form.serialize(),
-		success: function(status){
-			restoreButton();
-			if (status.error) {
-				$(".config-group .errors").text(status.error).show();
-				return;
-			} else if (status.uuid) {
-				var url = window.location.href;
-				if (url.indexOf('?') > -1) {
-					url += '&signupok=' + status.uuid;
-				}else{
-					url += '?signupok=' + status.uuid;
-				}
-				return window.location.href = url;
-			}
-			unknownError();
-		},
-		error: function(){
-			unknownError();
-			restoreButton();
+		function waitButton()
+		{
+			self.text("<?php echo $mktgoo->translate("Sending data, please wait...");?>");
+			self.attr("disabled", "disabled");
 		}
+
+		function restoreButton()
+		{
+			self.attr("disabled", false);
+			self.text("<?php echo $mktgoo->translate("Start improving my website");?> »");
+		}
+
+		function unknownError()
+		{
+			$(".config-group .errors").text("<?php echo $mktgoo->translate("There was an error with your request, please try again!");?>").show();
+		}
+
+		waitButton();
+		$.ajax({
+			type: "POST",
+			url: the_form.attr("action"),
+			data: the_form.serialize(),
+			success: function(status){
+				restoreButton();
+				if (status.error) {
+					$(".config-group .errors").text(status.error).show();
+					return;
+				} else if (status.uuid) {
+					var url = window.location.href;
+					if (url.indexOf('?') > -1) {
+						url += '&signupok=' + status.uuid;
+					} else {
+						url += '?signupok=' + status.uuid;
+					}
+					return window.location.href = url;
+				}
+				unknownError();
+			},
+			error: function(){
+				unknownError();
+				restoreButton();
+			}
+		});
+
 	});
+}
 
+document.addEventListener("DOMContentLoaded", function() {
+	if (typeof require === "function") {
+		require(["jquery"], function(jQuery) { attach_events(jQuery); });
+	} else {
+		attach_events(jQuery);
+	}
 });
-
 </script>
 
 <?php echo $mktgoo->html_footer(); ?>

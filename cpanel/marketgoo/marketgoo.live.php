@@ -91,8 +91,7 @@ class Mktgoo {
 
 	private function get_locale()
 	{
-		$cpanel_lang = $this->cpanel->fetch('$lang');
-		$locale = $cpanel_lang["cpanelresult"]["data"]["result"];
+		$locale = $this->cpanel->cpanelprint('$lang');
 		return !is_null($locale) ? $locale : "en";
 	}
 
@@ -122,16 +121,28 @@ class Mktgoo {
 
 	public function html_header()
 	{
+		// Try x3 method of retrieving the header template
 		$this->cpanel->api1("Branding", "include", array("stdheader.html"));
 		$html = $this->cpanel->get_result();
-		return preg_replace(["/index\.html/", "@images/@"], ["../index.html", "../images/"], $html);
+		if (strlen($html)) {
+			// x3 theme
+			return preg_replace(["/index\.html/", "@images/@"], ["../index.html", "../images/"], $html);
+		} else {
+			// Paper lantern theme
+			return $this->cpanel->header("Website Marketing Tools", "marketgoo-evolution");
+		}
 	}
 
 	public function html_footer()
 	{
+		// Try x3 method of retrieving the header template
 		$this->cpanel->api1("Branding", "include", array("stdfooter.html"));
 		$html = $this->cpanel->get_result();
-		return preg_replace(["/index\.html/", "@images/@"], ["../index.html", "../images/"], $html);
+		if (strlen($html)) {
+			return preg_replace(["/index\.html/", "@images/@"], ["../index.html", "../images/"], $html);
+		} else {
+			return $this->cpanel->footer();
+		}
 	}
 
 	public function user_name()
