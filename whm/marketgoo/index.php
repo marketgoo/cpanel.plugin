@@ -52,7 +52,7 @@
 <?php	if (is_new_version_available()) { ?>
         <div class="alert alert-danger">
             <strong>There is a new version of the plug-in available.</strong><br />
-            Please, <a href="http://support.marketgoo.com/customer/portal/articles/1334730-how-to-install-marketgoo-cpanel-plugin"
+            Please, <a href="http://support.marketgoo.com/article/140-how-to-install-the-marketgoo-cpanel-plugin"
                 target="_blank">click here</a> for installation instructions
         </div>
 <?php	} ?>
